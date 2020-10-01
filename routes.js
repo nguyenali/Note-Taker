@@ -24,5 +24,9 @@ module.exports = app => {
             return console.log("Added new note:" + newNote.title);
             
         });
+
+        app.get("/api/notes", (req,res) {
+            res.JSON(req.params.id);
+        })
     })
 }
