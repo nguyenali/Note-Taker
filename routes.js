@@ -25,8 +25,16 @@ module.exports = app => {
             
         });
 
-        app.get("/api/notes", (req,res) {
-            res.JSON(req.params.id);
+        app.get("/api/notes/:id", (req,res) {
+            res.JSON(notes[req.params.id]);
+        });
+
+        app.delete("/api/notes/:id", (req, res) {
+            notes.splice(req.params.id, 1);
+            updateDb();
+            console.log("Deleted norte with id" + req.params.id);
         })
+
+       
     })
 }
