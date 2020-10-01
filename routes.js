@@ -16,6 +16,6 @@ module.exports = app => {
             res.JSON(notes);
         });
 
-       
+   
     })
 }
