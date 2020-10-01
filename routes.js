@@ -1,3 +1,4 @@
+const { json } = require('express');
 const fs = require('fs');
 const path = require('path');
 
@@ -13,7 +14,7 @@ module.exports = app => {
         //API ROUTES
 
         app.get("/api/notes", (req, res){
-            res.JSON(notes);
+            res.json(notes);
         });
 
         app.post("/app/notes", (req,res) {
@@ -26,13 +27,13 @@ module.exports = app => {
         });
 
         app.get("/api/notes/:id", (req,res) {
-            res.JSON(notes[req.params.id]);
+            res.json(notes[req.params.id]);
         });
 
         app.delete("/api/notes/:id", (req, res) {
             notes.splice(req.params.id, 1);
             updateDb();
-            console.log("Deleted norte with id" + req.params.id);
+            console.log("Deleted note with id" + req.params.id);
         });
 
 
@@ -48,6 +49,13 @@ module.exports = app => {
             res.sendFile(path.join(__dirname, "../publice/index.html"));
         });
 
+        function updateDb() {
+            fs.writeFile("db/db.json", JSON.stringify(notes, '/t'), err => {
+                if(err) throw err;
+                return true;
+            });
+        }
+
        
-    })
+    });
 }
