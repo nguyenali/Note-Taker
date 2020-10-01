@@ -33,7 +33,16 @@ module.exports = app => {
             notes.splice(req.params.id, 1);
             updateDb();
             console.log("Deleted norte with id" + req.params.id);
-        })
+        });
+
+
+
+        //View Routes:
+
+
+        app.get("/notes", (req,res) {
+            res.sendFile(path.join(__dirname, "../public/notes.html"));
+        });
 
        
     })
