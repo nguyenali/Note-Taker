@@ -16,6 +16,13 @@ module.exports = app => {
             res.JSON(notes);
         });
 
-   
+        app.post("/app/notes", (req,res) {
+
+            let newNote = req.body;
+            notes.push(newNote);
+            updateDb();
+            return console.log("Added new note:" + newNote.title);
+            
+        });
     })
 }
