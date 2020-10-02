@@ -13,11 +13,11 @@ module.exports = app => {
 
         //API ROUTES
 
-        app.get("/api/notes", (req, res){
+        app.get("/api/notes", function(req, res){
             res.json(notes);
         });
 
-        app.post("/app/notes", (req,res) {
+        app.post("/app/notes", function(req,res) {
 
             let newNote = req.body;
             notes.push(newNote);
@@ -26,11 +26,11 @@ module.exports = app => {
             
         });
 
-        app.get("/api/notes/:id", (req,res) {
+        app.get("/api/notes/:id", function(req,res) {
             res.json(notes[req.params.id]);
         });
 
-        app.delete("/api/notes/:id", (req, res) {
+        app.delete("/api/notes/:id", function(req, res) {
             notes.splice(req.params.id, 1);
             updateDb();
             console.log("Deleted note with id" + req.params.id);
@@ -41,11 +41,11 @@ module.exports = app => {
         //View Routes:
 
 
-        app.get("/notes", (req,res) {
+        app.get("/notes", function(req,res) {
             res.sendFile(path.join(__dirname, "../public/notes.html"));
         });
 
-        app.get("*", (req,res) {
+        app.get("*", function(req,res) {
             res.sendFile(path.join(__dirname, "../publice/index.html"));
         });
 
