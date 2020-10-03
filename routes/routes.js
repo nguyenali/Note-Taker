@@ -16,7 +16,7 @@ module.exports = app => {
             res.json(notes);
         });
 
-        app.post("/app/notes", function(req,res) {
+        app.post("/api/notes", function(req,res) {
 
             let newNote = req.body;
             notes.push(newNote);
