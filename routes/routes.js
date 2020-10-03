@@ -1,4 +1,3 @@
-const { json } = require('express');
 const fs = require('fs');
 const path = require('path');
 
@@ -46,7 +45,7 @@ module.exports = app => {
         });
 
         app.get("*", function(req,res) {
-            res.sendFile(path.join(__dirname, "../publice/index.html"));
+            res.sendFile(path.join(__dirname, "../public/index.html"));
         });
 
         function updateDb() {
