@@ -24,6 +24,9 @@ Clone this repository. In the root file of this repository, type npm install in 
 ## Deployment Instruction:
 To use the application locally, run node server.js in your CLI, and then open http://localhost:3000 in your preferred browswer.
 
+## Deployed Application Link:
+https://nguyenali.github.io/Note-Taker/
+
 ## For additional questions please contact me at my email at:
 
 huy31996@hotmail.com
