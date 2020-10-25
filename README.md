@@ -26,7 +26,7 @@ To use the application locally, run node server.js in your CLI, and then open ht
 
 ## Deployed Application Link:
 Deployed Note Taker App
-
+[Deployed Note Taker App](https://vast-scrubland-69119.herokuapp.com/) 
 ## For additional questions please contact me at my email at:
 
 huy31996@hotmail.com
